@@ -1,0 +1,134 @@
+Aula 04
+14/03/2022
+
+Usuario comum: 	sysadmin
+		ifsp@123
+
+Usuario administrador:	root
+			ifsp@2022
+
+
+Regra Básicas
+
+-> Se estava funcionando antes, tem que funcionar hoje
+-> Nossas são sequênciais, se faltar tem que corre atras se for acompanhar síncrona.
+-> As atividades do curso são dimensionadas para ser realizadas à distância
+
+
+
+Terminal
+Interface mais próxima que o usuário tem do sistema operacional
+
+
+GNU/Linux
+Ele é o sistema operacional Linux - Kernel do sistema. Kernel é a menor parte do sistema operacional
+
+Todo sistema operacional tẽm três funções básica:
+Gerenciamento de Processos
+Gerenciamento de Memória
+Gerenciamento de Dispositivos de Entrada e Saída
+
+Que usuario está logado agora?
+sysadmin@operacao:~$ whoami
+sysadmin
+
+
+Mais detalhes do usuário logado:
+sysadmin@operacao:~$ who
+sysadmin tty7         2022-03-14 21:14 (:0)
+
+sysadmin@operacao:~$ w
+ 21:42:24 up 28 min,  1 user,  load average: 0,00, 0,02, 0,06
+USUARIO  TTY     DE               LOGIN@   OCIOSO JCPU   PCPU O QUE
+sysadmin tty7     :0               21:14   28:53  19.91s  0.20s xfce4-sessio
+hos
+
+
+Para saber o nome da máquina ou nome do computador
+sysadmin@operacao:~$ hostname
+operacao
+
+Imprime o diretório de trabalho:
+sysadmin@operacao:~$ pwd
+/home/sysadmin
+
+~ -> Simbolo que armazena o diretório home do usuário logado
+
+
+Limpar a tela do terminal
+Comando clear
+$clear
+
+ou
+
+Atalho
+
+<ctrl> + <l>
+
+O Linux possui 64 terminais desses seis são controlados pelo usuário os outros podem ser acionados, por exemplo: Direcionar resultados de linhas de logs do sistema.
+
+
+Está no ambiente gráfico e precisa alternar para o terminal de texto use a combinação de teclas:
+
+<ctrl> + <alt> + F1 - /dev/tty1 ou
+<ctrl> + <alt> + F2 - /dev/tty2 ou
+<ctrl> + <alt> + F3 - /dev/tty3 ou
+<ctrl> + <alt> + F4 - /dev/tty4 ou
+<ctrl> + <alt> + F5 - /dev/tty5 ou
+<ctrl> + <alt> + F6 - /dev/tty6
+
+
+Está no terminal de texto e precisa alternar entre o ambiente gráfico, se tiver instalado, use a combinação de tecla:
+
+<ctrl> + <alt> + F7 - /dev/tty7 ou
+<ctrl> + <alt> + F8 - /dev/tty8
+
+*Vai depender da distribuição
+
+
+Está no terminal de texto e precisa alternar entre os terminais
+
+<alt> + F1 - /dev/tty1 ou
+<alt> + F2 - /dev/tty2 ou
+<alt> + F3 - /dev/tty3 ou
+<alt> + F4 - /dev/tty4 ou
+<alt> + F5 - /dev/tty5 ou
+<alt> + F6 - /dev/tty6
+
+
+Terminais visuais, são os terminais servem para direcionar dados de instruções, eles são
+F9, F10, F11 e F12
+
+Exemplo:
+root@operacao:~# tail -f /var/log/auth.log >> /dev/tty12 &
+
+Alternar para terminal /dev/tty12
+
+Resultado:
+Mar 14 22:17:01 operacao CRON[1159]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 14 22:17:02 operacao CRON[1159]: pam_unix(cron:session): session closed for user root
+Mar 14 22:20:36 operacao su: (to root) sysadmin on pts/0
+Mar 14 22:20:36 operacao su: pam_unix(su-l:session): session opened for user root(uid=0) by (uid=1000)
+Mar 14 22:21:47 operacao su: (to sysadmin) sysadmin on pts/0
+Mar 14 22:21:47 operacao su: pam_unix(su-l:session): session opened for user sysadmin(uid=1000) by (uid=0)
+Mar 14 22:23:58 operacao su: pam_unix(su-l:session): session closed for user sysadmin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
