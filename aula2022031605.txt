@@ -1,0 +1,138 @@
+Aula 05
+16/03/2022
+
+
+
+-->Comandos para reiniciar o sistema
+
+#reboot
+
+ou
+
+#systemctl reboot
+
+ou
+
+#init 6
+
+ou 
+
+#echo b > /proce/sysrq-trigger
+
+
+--> Comandos para desligar o sistema
+
+#halt
+
+#poweroff
+
+
+
+--> Comando para reiniciar e/ou desligar o sistema
+
+#shutdown -r now
+#shutdown -h now
+
+#shutdown -r +5
+#shutdown -h +5
+
+#shutdown -r 11:35
+#shutdown -h 11:35
+
+#shutdown -r +5 "Com mensagem"
+#shutdown -h +5 "Com mensagem"
+
+
+--> Comandos para fazer logoff
+
+#logout
+
+ou
+
+#exit
+
+ou atalho
+
+<ctrl> + <d>
+
+
+--> Comando su
+
+Comando su executado sem indicação no argumento do nome do usuários, o programa irá realizar login com usuário root
+
+$su
+
+
+Ao executar o comando su sem a opção (-) ele carrega o novo usuário com as propriedade e permissões do usuário que logou primeiro.
+
+A melhor opção é sempre usar o su com parâmetro (-) ativado.
+
+
+$su -
+
+Para login no usuário root com todos os privilégios deste usuário
+
+ou
+
+$su - <nome_do_usuario>
+
+Para efetuar login no usuário desejado.
+
+
+O arquivo /etc/issue é o arquivo que exibe mensagem no terminal antes do login.
+
+
+O arquivo /etc/motd é o arquivo que exibe mensagem no terminal logo após o login.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
