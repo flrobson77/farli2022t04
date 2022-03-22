@@ -1,0 +1,160 @@
+Aula 06
+21/03/2022
+
+
+
+Comandos internos são comandos que rodam buiting com sistema operacional
+
+Para identificar estes comando usamos a instrução type
+
+sysadmin@operacao:~$ type echo
+echo é um comando interno do shell
+
+sysadmin@operacao:~$ type cd
+cd é um comando interno do shell
+
+
+Comandos externos são instruções que residem em arquivos, programas ou scripts
+
+sysadmin@operacao:~$ type man
+man é /usr/bin/man
+
+sysadmin@operacao:~$ type cp
+cp é /usr/bin/cp
+
+
+Variavel do sistema $PATH que mostra os diretórios onde o usuário pode executar programas
+
+$PATH para um usuário comum
+sysadmin@operacao:~$ echo $PATH
+/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
+
+$PATH para o root
+root@operacao:~# echo $PATH
+/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+
+
+Criando nosso próprio comando externo
+
+Editar o arquivo script01.sh usando nano
+root@operacao:~# nano script01.sh
+
+Com o texto a seguir:
+
+#!/bin/bash
+echo "Usuario logado :" $USER
+echo "Nome da maquina:" $HOSTNAME
+
+Salva e Sai
+
+Transforma o script em arquivo executável
+root@operacao:~# chmod +x script01.sh
+
+Execute o script
+root@operacao:~# ./script01.sh 
+Usuario logado : root
+Nome da maquina: operacao
+
+Transformando o script em um comando externo
+
+Copiando o arquivo script01.sh para /usr/local/sbin
+root@operacao:~# cp script01.sh /usr/local/sbin/
+
+Acessando o diretório /usr/local/sbin
+root@operacao:~# cd /usr/local/sbin/
+
+Alterar no nome do arquivo script01.sh para tuxscript
+root@operacao:/usr/local/sbin# mv script01.sh tuxscript
+
+root@operacao:/usr/local/sbin#cp tuxscript /usr/local/bin/
+
+Execute o comando tuxscript como root
+root@operacao:~# tuxscript 
+
+Usuario logado : root
+Nome da maquina: operacao
+
+
+Usando o comando exit volte para o usuário sysadmin e execute o tuxscript
+
+sysadmin@operacao:~$ tuxscript 
+Usuario logado : sysadmin
+Nome da maquina: operacao
+
+
+Verificando que o tuxscript é um comando externo criado pelo administrador do sistema
+sysadmin@operacao:~$ type tuxscript 
+tuxscript está na tabela hash (/usr/local/bin/tuxscript)
+
+
+Usamos o editor de texto nano
+Principais informações
+^  -> <ctrl>
+M- -> <alt>
+
+<ctrl> + <x> Para sair
+<ctrl> + <k> Recortar
+<ctrl> + <u> Colar
+<alt> + <6> Copiar
+<alt> + <n> habilitar número das linhas
+<alt> + <s> habilitar a quebra de linha automática
+<alt> + <y> habilita a sintaxe colorida do nano.
+
+Para obter mais atalhos acesse a ajuda usando o atalho
+<ctrl> + <g> Ajuda
+
+
+Para ativar o colorido do bash
+
+Edite o arquivo .bashrc do usuário root
+root@operacao:~# nano ~/.bashrc 
+
+Ative a numeração das linhas usando o atalho
+<alt> + <n>
+
+Descomentar da linha 9 a linha 14 como mostra o arquivo abaixo:
+
+Arquivo /root/.bashrc
+     1	# ~/.bashrc: executed by bash(1) for non-login shells.
+     2	
+     3	# Note: PS1 and umask are already set in /etc/profile. You should not
+     4	# need this unless you want different defaults for root.
+     5	# PS1='${debian_chroot:+($debian_chroot)}\h:\w\$ '
+     6	# umask 022
+     7	
+     8	# You may uncomment the following lines if you want `ls' to be colorized:
+     9	export LS_OPTIONS='--color=auto'
+    10	eval "$(dircolors)"
+    11	alias ls='ls $LS_OPTIONS'
+    12	alias ll='ls $LS_OPTIONS -l'
+    13	alias l='ls $LS_OPTIONS -lA'
+    14	
+    15	# Some more alias to avoid making mistakes:
+    16	# alias rm='rm -i'
+    17	# alias cp='cp -i'
+    18	# alias mv='mv -i'
+
+salva e sai
+
+Recarregar o arquivo na memória
+root@operacao:~# source ~/.bashrc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
