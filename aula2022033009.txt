@@ -1,0 +1,288 @@
+Aula 09
+30/30/2022
+
+
+Comando ls
+Listar arquivos e diretórios
+root@operacao:~/brasil# ls
+brasilia    Brasil.txt  centroeste  publico  sul
+brasil.txt  BRasil.txt  norte       sudeste
+
+Listar arquivos e diretórios com mais detalhes
+root@operacao:~/brasil# ls -l
+total 24
+-rw-r--r-- 1 root root    0 mar 23 22:28 brasilia
+-rw-r--r-- 1 root root   12 mar 28 21:18 brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 Brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 BRasil.txt
+drwxr-xr-x 2 root root 4096 mar 23 21:58 centroeste
+drwxr-xr-x 5 root root 4096 mar 28 21:38 norte
+drwxr-xr-x 2 root root 4096 mar 28 22:16 publico
+drwxr-xr-x 3 root root 4096 mar 28 21:41 sudeste
+drwxr-xr-x 2 root root 4096 mar 23 21:56 sul
+
+Listar todos os arquivos e diretórios inclusive os ocultos
+
+root@operacao:~/brasil# ls -a
+.   brasilia    Brasil.txt  centroeste        norte    publico  sul
+..  brasil.txt  BRasil.txt  .diretoriooculto  .oculto  sudeste
+
+Listar todos os arquivos e diretorio com detalhes incluindo os ocultos
+root@operacao:~/brasil# ls -la
+total 36
+drwxr-xr-x 8 root root 4096 mar 28 21:42 .
+drwx------ 6 root root 4096 mar 28 21:55 ..
+-rw-r--r-- 1 root root    0 mar 23 22:28 brasilia
+-rw-r--r-- 1 root root   12 mar 28 21:18 brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 Brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 BRasil.txt
+drwxr-xr-x 2 root root 4096 mar 23 21:58 centroeste
+drwxr-xr-x 2 root root 4096 mar 23 22:32 .diretoriooculto
+drwxr-xr-x 5 root root 4096 mar 28 21:38 norte
+-rw-r--r-- 1 root root    0 mar 23 22:32 .oculto
+drwxr-xr-x 2 root root 4096 mar 28 22:16 publico
+drwxr-xr-x 3 root root 4096 mar 28 21:41 sudeste
+drwxr-xr-x 2 root root 4096 mar 23 21:56 sul
+
+Lista todos arquivos e diretórios com resposta humanizada
+root@operacao:~/brasil# ls -lha
+total 36K
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 .
+drwx------ 6 root root 4,0K mar 28 21:55 ..
+-rw-r--r-- 1 root root    0 mar 23 22:28 brasilia
+-rw-r--r-- 1 root root   12 mar 28 21:18 brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 Brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 BRasil.txt
+drwxr-xr-x 2 root root 4,0K mar 23 21:58 centroeste
+drwxr-xr-x 2 root root 4,0K mar 23 22:32 .diretoriooculto
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 norte
+-rw-r--r-- 1 root root    0 mar 23 22:32 .oculto
+drwxr-xr-x 2 root root 4,0K mar 28 22:16 publico
+drwxr-xr-x 3 root root 4,0K mar 28 21:41 sudeste
+drwxr-xr-x 2 root root 4,0K mar 23 21:56 sul
+
+Lista todos os arquivos e diretorio com recursividade
+root@operacao:~/brasil# ls -lhaR
+.:
+total 36K
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 .
+drwx------ 6 root root 4,0K mar 28 21:55 ..
+-rw-r--r-- 1 root root    0 mar 23 22:28 brasilia
+-rw-r--r-- 1 root root   12 mar 28 21:18 brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 Brasil.txt
+-rw-r--r-- 1 root root    0 mar 23 22:25 BRasil.txt
+drwxr-xr-x 2 root root 4,0K mar 23 21:58 centroeste
+drwxr-xr-x 2 root root 4,0K mar 23 22:32 .diretoriooculto
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 norte
+-rw-r--r-- 1 root root    0 mar 23 22:32 .oculto
+drwxr-xr-x 2 root root 4,0K mar 28 22:16 publico
+drwxr-xr-x 3 root root 4,0K mar 28 21:41 sudeste
+drwxr-xr-x 2 root root 4,0K mar 23 21:56 sul
+
+./centroeste:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 21:58 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+
+./.diretoriooculto:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 22:32 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+
+./norte:
+total 20K
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 acre
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 amazonas
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 rondonia
+
+./norte/acre:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 .
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 ..
+
+./norte/amazonas:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 .
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 ..
+
+./norte/rondonia:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 28 21:36 .
+drwxr-xr-x 5 root root 4,0K mar 28 21:38 ..
+
+./publico:
+total 32K
+drwxr-xr-x 2 root root 4,0K mar 28 22:16 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+-rw-r--r-- 1 root root   10 mar 28 22:16 arq01.txt
+-rw-r--r-- 1 root root   13 mar 28 22:39 arq02.txt
+-rw-r--r-- 1 root root    7 mar 28 22:06 arq.txt
+-rw-r--r-- 1 root root   27 mar 28 21:25 frutas.txt
+-rw-r--r-- 1 root root  416 mar 28 21:52 ponto02.txt
+-rw-r--r-- 1 root root  104 mar 28 21:31 ponto.txt
+
+./sudeste:
+total 16K
+drwxr-xr-x 3 root root 4,0K mar 28 21:41 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+-rw-r--r-- 1 root root   49 mar 28 21:23 capitais.txt
+drwxr-xr-x 5 root root 4,0K mar 23 22:05 saopaulo
+
+./sudeste/saopaulo:
+total 20K
+drwxr-xr-x 5 root root 4,0K mar 23 22:05 .
+drwxr-xr-x 3 root root 4,0K mar 28 21:41 ..
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 aruja
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 campinas
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 guarulhos
+
+./sudeste/saopaulo/aruja:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 .
+drwxr-xr-x 5 root root 4,0K mar 23 22:05 ..
+
+./sudeste/saopaulo/campinas:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 .
+drwxr-xr-x 5 root root 4,0K mar 23 22:05 ..
+
+./sudeste/saopaulo/guarulhos:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 22:05 .
+drwxr-xr-x 5 root root 4,0K mar 23 22:05 ..
+
+./sul:
+total 8,0K
+drwxr-xr-x 2 root root 4,0K mar 23 21:56 .
+drwxr-xr-x 8 root root 4,0K mar 28 21:42 ..
+
+
+Exibindo caminho absoluto do diretório brasil
+root@operacao:~/brasil# pwd
+/root/brasil
+
+Acessando diretório norte usando caminho relativo
+root@operacao:~/brasil# cd norte
+
+
+Caminho absoluto é quando descrevemos todos os subdiretórios até o /
+
+Caminho relativo para acessar diretórios que ja este dentro dele
+
+
+Mais exemplos:
+Acessando o diretório /root/brasil/norte usando o caminho completo
+root@operacao:~/brasil# cd /root/brasil/norte/
+resultado
+root@operacao:~/brasil/norte# pwd
+/root/brasil/norte
+
+Acessando o diretório /usr/local/bin a partir do diretório /root/brasil/norte
+root@operacao:~/brasil/norte# cd /usr/local/bin/
+
+Resultado:
+root@operacao:/usr/local/bin# ls
+tuxscript
+
+Acessando o diretório /root/brasil/sudeste/saopaulo do diretório /usr/local/bin
+root@operacao:/usr/local/bin# cd /root/brasil/sudeste/saopaulo/
+
+resultado
+root@operacao:~/brasil/sudeste/saopaulo# ls
+aruja  campinas  guarulhos
+
+Acessando o diretório campinas usando o caminho relativo
+root@operacao:~/brasil/sudeste/saopaulo# cd campinas
+
+resultado
+root@operacao:~/brasil/sudeste/saopaulo/campinas# pwd
+/root/brasil/sudeste/saopaulo/campinas
+root@operacao:~/brasil/sudeste/saopaulo/campinas# 
+
+usando o cd - você retorna a posição anterior na árvore de diretórios:
+root@operacao:~/brasil/sudeste/saopaulo/campinas# cd /usr/local/bin
+
+root@operacao:/usr/local/bin# cd -
+/root/brasil/sudeste/saopaulo/campinas
+
+root@operacao:~/brasil/sudeste/saopaulo/campinas# cd -
+/usr/local/bin
+
+usando o comando cd.. retornamos um nível na arvore de diretórios
+root@operacao:~/brasil/sudeste/saopaulo/campinas# cd ..
+
+resultado:
+root@operacao:~/brasil/sudeste/saopaulo# pwd
+/root/brasil/sudeste/saopaulo
+
+
+root@operacao:~/brasil/sudeste/saopaulo# cd ..
+
+Resultado
+root@operacao:~/brasil/sudeste# pwd
+/root/brasil/sudeste
+
+
+com o comando cd . indico que a partir do ponto da árvore de diretórios que estou no momento para outro subdiretório dentro do anterior
+
+root@operacao:~/brasil/sudeste# cd ./saopaulo/aruja/
+
+Resultado
+root@operacao:~/brasil/sudeste/saopaulo/aruja# 
+cd ..
+
+root@operacao:~/brasil/sudeste/saopaulo# cd ./campinas/
+
+Resultado:
+root@operacao:~/brasil/sudeste/saopaulo/campinas# ls /root/brasil/sudeste/
+capitais.txt  saopaulo
+
+Criando diretorio sem precisar informar o caminho absoluto somente usando o comando cd ..
+root@operacao:~/brasil/sudeste/saopaulo/campinas# mkdir ../../riodejaneiro
+
+root@operacao:~/brasil/sudeste/saopaulo/campinas# ls /root/brasil/sudeste/
+capitais.txt  riodejaneiro  saopaulo
+
+
+Os comandos cd ~ ou cd retornam de qualquer lugar do shell bash para o diretório home do usuario logado
+root@operacao:~/brasil/sudeste/saopaulo/campinas# cd ~
+root@operacao:~# pwd
+/root
+root@operacao:~# cd -
+/root/brasil/sudeste/saopaulo/campinas
+root@operacao:~/brasil/sudeste/saopaulo/campinas# cd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

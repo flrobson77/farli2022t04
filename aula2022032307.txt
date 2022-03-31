@@ -1,0 +1,111 @@
+Aula 07
+23/03/2022
+
+
+Comandos manipulação de arquivos e diretórios
+touch, echo, ls, mkdir, rmdir, cd, pwd e rm
+
+
+
+Criar diretório
+root@operacao:~# mkdir brasil 
+
+
+Para "entrar" no diretório usamos o comando cd + o nome do diretório
+root@operacao:~# cd brasil
+
+
+Podemos criar dois diretórios ao mesmo tempo colocando o nome no argumento separados por espaço:
+root@operacao:~/brasil# mkdir sudeste sul
+
+Criar diretório e subdiretório ao mesmo tempo
+root@operacao:~/brasil# mkdir nordeste/bahia
+mkdir: não foi possível criar o diretório “nordeste/bahia”: Arquivo ou diretório inexistente
+
+O erro anterior foi causado porque faltou a opção -p para criar a árvore com o diretório e o subdiretório
+
+root@operacao:~/brasil# mkdir -p nordeste/bahia
+
+Comando tree usado para visualizar a árvore de diretórios
+root@operacao:~# tree -L 1 /
+/
+├── bin -> usr/bin
+├── boot
+├── dev
+├── etc
+├── home
+├── initrd.img -> boot/initrd.img-5.10.0-9-amd64
+├── initrd.img.old -> boot/initrd.img-5.10.0-9-amd64
+├── lib -> usr/lib
+├── lib32 -> usr/lib32
+├── lib64 -> usr/lib64
+├── libx32 -> usr/libx32
+├── lost+found
+├── media
+├── mnt
+├── opt
+├── proc
+├── root
+├── run
+├── sbin -> usr/sbin
+├── srv
+├── sys
+├── tmp
+├── usr
+├── var
+├── vmlinuz -> boot/vmlinuz-5.10.0-9-amd64
+└── vmlinuz.old -> boot/vmlinuz-5.10.0-9-amd64
+
+22 directories, 4 files
+
+
+É possível criar diretório e vários subdiretórios ao mesmo tempo.
+
+root@operacao:~/brasil#mkdir -p sudeste/saopaulo/{guarulhos,aruja,campinas}
+
+root@operacao:~/brasil# tree sudeste
+sudeste
+└── saopaulo
+    ├── aruja
+    ├── campinas
+    └── guarulhos
+
+4 directories, 0 files
+
+
+Criar arquivo vazio
+root@operacao:~/brasil# touch brasil.txt
+
+Lembrar que o GNU/Linux é case sensitive ou seja brasil.txt e Brasil.txt com a primeira maiúscula são arquivos diferentes
+
+
+A extensão no GNU/Linux não é necessária ou seja brasilia.txt ou brasilia
+
+root@operacao:~/brasil# touch brasilia
+root@operacao:~/brasil# ls
+brasilia
+
+
+Para criar arquivo ou diretório oculto basta colocar um "." ponto final no inicio do nome do arquivo ou diretório
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
